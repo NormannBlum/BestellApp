@@ -3,13 +3,11 @@
 // um den Warenkorb später zu rendern und zu aktualisieren.
 let basket = [];
 
-
 // Initialisiert die Seite, indem die Gerichte gerendert werden.
 // Die Funktion "init" baut den Hauptinhalt der Seite auf, indem sie "renderFood" aufruft.
 function init() {
   renderFood();
 }
- 
 
 //  "renderFood" durchläuft das Array "myDishes" und erstellt das HTML für jedes Gericht.
 //  Das generierte HTML für jedes Gericht wird dem "content" Container hinzugefügt,
@@ -23,7 +21,6 @@ function renderFood() {
   }
 }
 
-
 // Überprüft zuerst, ob das Gericht im Warenkorb ist. "if" --> Wenn das Gericht im Korb ist, wird die Menge erhöht.
 // Ansonsten wird das Gericht in den Warenkorb hinzugefügt --> "basket.push".
 function addToCart(indexFood) {
@@ -32,6 +29,7 @@ function addToCart(indexFood) {
   for (let i = 0; i < basket.length; i++) {
     if (basket[i].name === selectedDish.name) {
       basket[i].quantity++;
+      renderOverlayBasket();
       renderBasket();
       return;
     }
@@ -42,10 +40,9 @@ function addToCart(indexFood) {
     price: selectedDish.price,
     quantity: 1,
   });
-
+  renderOverlayBasket();
   renderBasket();
 }
-
 
 // "removeFromCard" reduziert die Menge eines Gerichts im Warenkorb oder entfernt es, falls die Menge 1 ist.
 // "if/else" Falls die Menge größer als 1 ist, wird sie um eins verringert.
@@ -56,17 +53,17 @@ function removeFromCart(index) {
   } else {
     basket.splice(index, 1);
   }
+  renderOverlayBasket();
   renderBasket();
 }
-
 
 // "deleteFromCart" entfernt ein Gericht komplett aus dem Warenkorb anhand des Indexes.
 // Durch "renderBasket" wird nach dem Entfernen der Warenkorb aktualisiert, um die Änderungen anzuzeigen.
 function deleteFromCart(index) {
   basket.splice(index, 1);
+  renderOverlayBasket();
   renderBasket();
 }
-
 
 // "renderBasket" aktualisiert die Anzeige des Warenkorbs basierend auf den aktuellen Artikeln im "basket" Array.
 // Die Funktion zeigt jedes Gericht an, aktualisiert die Menge,
@@ -88,26 +85,29 @@ function renderBasket() {
     basketItemsRef.innerHTML += getBasketItemTemplate(item, i);
   }
 
-  document.getElementById(
-    "total-price"
-  ).innerHTML = `Gesamt: ${totalPrice.toFixed(2).replace(".", ",")} €`;
+  document.getElementById("total-price").innerHTML = `Gesamt: ${totalPrice
+    .toFixed(2)
+    .replace(".", ",")} €`;
 }
-
 
 // Leitet den Hungrigen zur Bestellbestätigungsseite weiter
 function confirmOrder() {
   window.location.href = "confirmation.html";
 }
 
+// "renderOverlayBasket" rendert den mobilen Warenkorb und zeigt alle Artikel darin an.
+// Der HTML-Inhalt des mobilen Warenkorbs wird mithilfe einer Template-Funktion aktualisiert.
+function renderOverlayBasket() {
+  let basketRef = document.getElementById("mobileBasket");
+  basketRef.innerHTML = getBasketOverlayTemplate();
+}
 
-// toggle Basket zeigt oder versteckt den Warenkorb durch das Umschalten der Sichtbarkeit der zugehörigen Klasse.
-// Sie aktiviert oder deaktiviert außerdem das Overlay.
-function toggleBasket() {
-  let basketWrapper = document.getElementsByClassName("basket-wrapper")[0];
-  let overlay = document.getElementById("overlay");
-  basketWrapper.classList.toggle("basket-hidden");
-
-  if (overlay) {
-    overlay.classList.toggle("active");
+// "toggleOverlay" zeigt oder versteckt den mobilen Warenkorb, indem die Sichtbarkeit des Overlays umgeschaltet wird.
+// Wenn das Overlay sichtbar wird, wird der Inhalt des Warenkorbs gerendert.
+function toggleOverlay() {
+  let popupBasket = document.getElementById("mobileBasket");
+  popupBasket.classList.toggle("show_mobile_basket");
+  if (popupBasket.classList.contains("show_mobile_basket")) {
+    renderOverlayBasket();
   }
 }

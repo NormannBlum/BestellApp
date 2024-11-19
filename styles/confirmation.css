@@ -54,7 +54,6 @@ footer {
 }
 
 button.back-to-home {
-  margin-top: 20px;
   padding: 10px 20px;
   background-color: #e67300;
   color: white;
@@ -75,5 +74,5 @@ h1 {
 @media (max-width: 450px) {
   .leo-image {
     width: 300px;
-}
+  }
 }

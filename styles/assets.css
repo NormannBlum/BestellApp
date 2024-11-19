@@ -58,3 +58,22 @@ h3 {
 .order-button:hover {
   background-color: #e67300;
 }
+
+.close-overlay-button {
+  display: block;
+  width: 120px;
+  padding: 12px;
+  margin-top: 4px;
+  background-color: #f7c594;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.close-overlay-button:hover {
+  background-color: #e67300;
+}

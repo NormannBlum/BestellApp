@@ -1,17 +1,25 @@
 header {
-    height: 100px;
-    background-color: rgb(239, 131, 7);
-    display: flex;
-    align-items: center;
-    padding-left: 16px;
-  }
-  
-  .header-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .header-logo {
-    width: 160px;
-  }
-  
+  height: 100px;
+  background-color: rgb(239, 131, 7);
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  width: 160px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}

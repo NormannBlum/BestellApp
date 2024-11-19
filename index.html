@@ -26,8 +26,18 @@
           src="./assets/icons/Logo.png"
           alt="Logo BestellApp"
         />
+        <button class="basket-header-button" onclick="toggleOverlay()">
+          <img
+            src="./assets/icons/mobile-basket.svg"
+            alt="Warenkorb MobileButton"
+          />
+        </button>
       </div>
     </header>
+
+    <div id="mobileBasket" class="mobile-basket">
+      <!-- Der mobile Warenkorb wird hier dynamisch mit JavaScript gerendert -->
+    </div>
 
     <main>
       <section class="main-container">
@@ -77,10 +87,6 @@
           </button>
         </div>
       </section>
-
-      <button class="basket-toggle" onclick="toggleBasket()" id="basket-toggle">
-        Warenkorb
-      </button>
     </main>
 
     <footer>

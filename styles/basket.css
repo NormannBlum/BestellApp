@@ -62,3 +62,21 @@
   font-weight: bold;
   text-align: center;
 }
+
+.basket-header-button {
+  background-color: #e67300;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  text-align: center;
+  margin-right: 16px;
+  transition: background-color 0.3s;
+}
+
+.basket-header-button:hover {
+  background-color: #cc5b00;
+}
+
