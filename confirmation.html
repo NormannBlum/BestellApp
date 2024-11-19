@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BestellApp</title>
+    <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <link rel="stylesheet" href="styles/standart.css" />
+    <link rel="stylesheet" href="styles/confirmation.css" />
+    <script src="scripts/db.js"></script>
+    <script src="scripts/template.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container"></div>
+      <img
+        class="header-logo"
+        src="./assets/icons/Logo.png"
+        alt="Logo BestellApp"
+      />
+    </header>
+
+    <main class="confirmation-main">
+      <h1>Vielen Dank für deine Bestellung</h1>
+      <h3>Deine Bestellnummer lautet: 736841</h3>
+      <img
+        class="leo-image"
+        src="assets/img/leo lightspeed.png"
+        alt="Delivery Leopard"
+      />
+      <p class="confirmation-text">
+        Unser Fahrer Leo Lightspeed wird dein Essen in ca. 120 Minuten liefern
+      </p>
+      <button class="back-to-home" onclick="window.location.href='index.html'">
+        Zurück zur Bestellseite
+      </button>
+    </main>
+
+    <footer>
+      <p>© 2024 Normann Blum</p>
+    </footer>
+  </body>
+</html>

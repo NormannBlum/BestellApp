@@ -1,0 +1,60 @@
+h1 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.dish-price {
+  color: rgb(239, 131, 7);
+}
+
+.dish-details {
+  max-width: 80%;
+}
+
+.dish-container {
+  border: 1px solid #d3d3d3;
+  padding: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.dish-container:hover {
+  background-color: #f7e2b8;
+}
+
+.add-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.order-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  background-color: #f7c594;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-button:hover {
+  background-color: #e67300;
+}

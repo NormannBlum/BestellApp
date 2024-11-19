@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BestellApp</title>
+    <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <link rel="stylesheet" href="styles/standart.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/assets.css" />
+    <link rel="stylesheet" href="styles/basket.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <script src="scripts/db.js"></script>
+    <script src="scripts/template.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body onload="init()">
+    <header>
+      <div class="header-container">
+        <img
+          class="header-logo"
+          src="./assets/icons/Logo.png"
+          alt="Logo BestellApp"
+        />
+      </div>
+    </header>
+
+    <main>
+      <section class="main-container">
+        <img
+          class="restaurant-image"
+          src="./assets/img/noodles-background.jpg"
+          alt="Titelbild Restaurant"
+        />
+        <div class="main-content">
+          <img
+            class="restaurant-logo"
+            src="./assets/img/logo-restaurant.png"
+            alt="Logo Restaurant"
+          />
+          <div class="restaurant-info">
+            <h1>Restaurante Don Norberto</h1>
+            <span class="restaurant-rating">Bewertung (4,8 von 5 Sternen)</span>
+          </div>
+
+          <div class="menu-section">
+            <img
+              class="arrow-right"
+              src="./assets/icons/arrow-right.svg"
+              alt="Pizza Arrow"
+            />
+            <a href="#pizza-section">Pizza</a>
+          </div>
+
+          <div class="content-menu-background"></div>
+          <h2 id="pizza-section">Pizza</h2>
+          <div id="content"></div>
+        </div>
+      </section>
+
+      <section class="basket-wrapper">
+        <div class="basket" id="basket">
+          <h3>Warenkorb</h3>
+          <div id="basket-items"></div>
+          <div id="total-price">Gesamt: 0,00 €</div>
+          <button
+            class="order-button"
+            onclick="confirmOrder()"
+            style="display: none"
+            id="order-button"
+          >
+            Bestellung abschließen
+          </button>
+        </div>
+      </section>
+
+      <button class="basket-toggle" onclick="toggleBasket()" id="basket-toggle">
+        Warenkorb
+      </button>
+    </main>
+
+    <footer>
+      <p>© 2024 Normann Blum</p>
+    </footer>
+  </body>
+</html>

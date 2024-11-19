@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(145, 145, 145);
+}
+
+a:hover {
+  color: rgb(239, 131, 7);
+  text-decoration: underline;
+}
